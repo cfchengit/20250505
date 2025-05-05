@@ -4,6 +4,9 @@ tags: 程式設計,第十二章,ML5.js，學生版,互動藝術程式創作入�
 ---
 # 12. 媒體 - 影像、聲音與影片的整合與拆解ML5.js_學生版
 
+![image](https://github.com/user-attachments/assets/e412a175-5127-42ab-afea-5db5b28b604d)
+
+
 相關網站
 
 [https://www.tensorflow.org/js/models](https://www.tensorflow.org/js/models)
