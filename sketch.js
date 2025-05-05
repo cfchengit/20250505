@@ -34,7 +34,7 @@ function draw() {
   if (hands.length > 0) {
     for (let hand of hands) {
       if (hand.confidence > 0.1) {
-        // Loop through keypoints and draw circles
+        // Draw keypoints and connect points 0 to 4
         for (let i = 0; i < hand.keypoints.length; i++) {
           let keypoint = hand.keypoints[i];
 
@@ -47,6 +47,30 @@ function draw() {
 
           noStroke();
           circle(keypoint.x, keypoint.y, 16);
+        }
+
+        // Connect keypoints 0 to 4 with lines
+        strokeWeight(2);
+        if (hand.handedness == "Left") {
+          stroke(255, 0, 255); // Left hand color
+        } else {
+          stroke(255, 255, 0); // Right hand color
+        }
+
+        for (let i = 0; i < 4; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        }
+        for (let i = 5; i < 8; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        }
+        for (let i = 9; i < 12; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
         }
       }
     }
